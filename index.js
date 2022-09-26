@@ -27,13 +27,14 @@ async function weatherApp(e) {
 
     data = await res.json()
 
-    console.log(data.current.feelslike_c)
+    // console.log(data.current.feelslike_c)
 
     let error = data.error //true
-    if(error){
+    if (error) {
         window.alert("Please Enter Correct City Name")
 
-    } else {
+    }
+    else {
 
 
         let temprature = data.current.temp_c
@@ -41,7 +42,7 @@ async function weatherApp(e) {
         let time = data.location.localtime
         let image = data.current.condition.icon
         let windSpeed = data.current.wind_kph
-        let feelsLike = data.current.feelslike_c
+        // let feelsLike = data.current.feelslike_c
 
 
 
@@ -53,7 +54,7 @@ async function weatherApp(e) {
         cityTime.innerText = time;
         conditions.innerText = condition
         wind.innerText = windSpeed
-        feel.innerText = feelsLike
+        // feel.innerText = feelsLike
 
         img.setAttribute("src", `https:${image}`)
 
